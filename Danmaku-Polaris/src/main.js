@@ -38,6 +38,7 @@ function Init() {
         //ねつ
         "netsu": "img/playable/netsu_himono.png",
         "netsu_b": "img/playable/netsu_bullet.png",
+        "netsu_ura": "img/playable/netsu_ura.png",
 
         //敵
         //テンプレ
@@ -100,6 +101,10 @@ function Init() {
         "cow": "img/enemy/usi.png",
         "cow_b1": "img/enemy/usi_bullet.png",
         "cow_b2": "img/enemy/usi_bullet2.png",
+
+        //みずかめ
+        "mizu": "img/enemy/mizu.png",
+        "mizu_b1": "img/enemy/mizu_bullet.png",
     });
 }
 

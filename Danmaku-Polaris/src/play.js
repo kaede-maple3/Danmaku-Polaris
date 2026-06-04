@@ -6,6 +6,7 @@ let pText, pTBGFlame, pTBG;
 let pLoRect, pLoID;
 
 let stageRect;//ステージを区別するための背景
+let scoreRect;//スコアを表示するとこの背景
 let stageName;//HPや敵の情報などを表示するとこ
 
 function playReset() {
@@ -38,12 +39,20 @@ function playReset() {
 
     //スコア
     {
+        scoreRect = new Fortis.Entity(new Fortis.RectShape(Fortis.Game.canvasCfg.size.x/5, Fortis.Game.canvasCfg.size.y), new Fortis.ColorMaterial(new Fortis.Color("#252525")));
+        scoreRect.pos = new Fortis.Vector2(Fortis.Game.canvasCfg.size.x*9 / 10, Fortis.Game.canvasCfg.size.y/2)
         stageName = new Fortis.Entity(new Fortis.TextShape(new Fortis.Font("DotGothic16", 25), stageIndexName[nowStage] + "ステージ"), new Fortis.ColorMaterial(new Fortis.Color("white")));
         stageName.pos = new Fortis.Vector2(Fortis.Game.canvasCfg.size.x *9/ 10, Fortis.Game.canvasCfg.size.y/1.1);
-        pUILayer.add(stageName);
+        pUILayer.addEntities([scoreRect,stageName]);
     }
 
-    let test = new wow(pObjLayer, new Fortis.Vector2(200, 200));
+    //test = new wow(pObjLayer, new Fortis.Vector2(200, 200));
+    //test = new goat(pObjLayer, new Fortis.Vector2(200, 200));
+    //test = new sheep(pObjLayer, new Fortis.Vector2(0, 200));
+    //test = new balance(pObjLayer, new Fortis.Vector2(0, 200),45);//3つ目は角速度
+    //test = new mizu(pObjLayer, new Fortis.Vector2(Fortis.Game.canvasCfg.size.x*4/5, 200),-45);//3つめは角速度
+    //test = new cow(pObjLayer, new Fortis.Vector2(200, 200));
+    test = new bro(pObjLayer, new Fortis.Vector2(200, 200));
 }
 
 let test;
