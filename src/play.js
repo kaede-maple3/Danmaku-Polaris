@@ -295,7 +295,7 @@ function aheadPlayer(speed, pos) {
 
 function changeHP() {
     console.log(player.hp);
-    //playreHPText.shape.text = "プレイヤー体力:" + player.hp + "/" + player.maxHp;
+    playreHPText.shape.text = "プレイヤー体力:" + player.hp + "/" + player.maxHp;
     if (player.hp <= 0) gameover = true;
 }
 
