@@ -217,7 +217,7 @@ class playerBullet3 {
         this.aspect = new Fortis.Vector2(11, 20);
         playerBullets[this.id] = this;
 
-        this.damage = 3;
+        this.damage = 5;
 
         this.pos = pos.copy();
         this.entity = new Fortis.Entity(new Fortis.ImageShape(Fortis.util.calculateKeepingAspectSize(Fortis.Game.canvasCfg.size.x / 40, this.aspect)), new Fortis.ImageMaterial("angel_b"));
