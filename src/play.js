@@ -125,7 +125,7 @@ function playReset() {
     player = new Player(pObjLayer, playerPos, ["tensi", "netsu_ura", "angel"][nowChara]);
     changeHP();
 
-    phase = 2;
+    phase = 0;
     mizuCreate = false;
     mizuTime = 0;
     mizuCoolTime = 17000;
