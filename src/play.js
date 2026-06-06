@@ -133,12 +133,13 @@ function playReset() {
     balanceTime = 0;
     balanceCoolTime = 17000;
     gameover = false;
+    canNSKeyInput = true;
 }
 
 let test;
 function pUpdate(delta) {
     if (pLoRect.alpha == 0) {
-        if (gameover) {
+        if (gameover && canNSKeyInput) {
             GOBG.alpha = 0.6;
             goText.alpha = 1;
 
@@ -168,7 +169,14 @@ function pUpdate(delta) {
             }
 
             if (Object.keys(nowEnemies).length == 0) {
-                if (phase == 4) gameover = true;
+                if (phase == 4) {
+                    gameover = true;
+                    canNSKeyInput = false;
+                    canNSKIPTimerID = Fortis.Timer.add(2000, false, function () {
+                        canNSKeyInput = true;
+                    });
+                    Fortis.Timer.start(canNSKIPTimerID);
+                };
                 phase++;
                 mizuCreate = false;
                 mizuTime = 0;
@@ -296,7 +304,14 @@ function aheadPlayer(speed, pos) {
 function changeHP() {
     console.log(player.hp);
     playreHPText.shape.text = "プレイヤー体力:" + player.hp + "/" + player.maxHp;
-    if (player.hp <= 0) gameover = true;
+    if (player.hp <= 0) {
+        gameover = true;
+        canNSKeyInput = false;
+        canNSKIPTimerID = Fortis.Timer.add(2000, false, function () {
+            canNSKeyInput = true;
+        });
+        Fortis.Timer.start(canNSKIPTimerID);
+    }
 }
 
 function changeEnemyHP() {
