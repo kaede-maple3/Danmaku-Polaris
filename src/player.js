@@ -1,10 +1,12 @@
 function invTimeReset() {
     player.invTime = false;
     player.entity.alpha = 1;
+    invIcon.alpha = 0;
 }
 
 function dullReset() {
     player.dull = false;
+    dullIcon.alpha = 0;
 }
 
 class Player {
@@ -18,8 +20,8 @@ class Player {
         this.invTime = false;
         this.dull = false;
 
-        this.hp = 100;
-        this.maxHp = 100;
+        this.hp = 70;
+        this.maxHp = 70;
 
         this.atTime = 0;
         this.canAt = true;

@@ -1,5 +1,5 @@
 function Init() {
-    Fortis.Game.config.debug = true;
+    //Fortis.Game.config.debug = true;
     Fortis.Game.canvasCfg.size = new Fortis.Vector2(1200, 675);
     Fortis.Game.canvasCfg.BGColor = new Fortis.Color("#252525");
     Fortis.Game.canvasCfg.autoResize = false;
@@ -26,6 +26,9 @@ function Init() {
         "WDXL Lubrifont TC": "https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+TC&display=swap",
     });
     Fortis.ImageLoader.addImages({
+        //その他
+        "dull": "img/other/dull.png",
+        "shield": "img/other/shield.png",
         //プレイアブル
         //テンプレ
         //"": "img/playable/.png",

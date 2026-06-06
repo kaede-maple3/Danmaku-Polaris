@@ -195,7 +195,7 @@ class balance {
         this.angle = -90;
         this.radius = Fortis.Game.canvasCfg.size.x / 8;
 
-        this.alivingTime = 16000;//10秒間出現
+        this.alivingTime = 16000;//16秒間出現
         let id = this.id;
         this.timerID = Fortis.Timer.add(this.alivingTime, false, function () {
             nowEnemies[id].layer.remove(nowEnemies[id].entity);
@@ -296,8 +296,8 @@ class cow {
         this.swTime = 0;//移動しながらの攻撃の経過時間
         this.swCoolTime = 200;
 
-        this.hp = 750;
-        this.maxHp = 750;
+        this.hp = 650;
+        this.maxHp = 650;
         this.pos = pos.copy();
         this.size = this.entity.shape.size.copy();
         this.speed = new Fortis.Vector2(Fortis.Game.canvasCfg.size.x / 15, 0);
@@ -364,12 +364,12 @@ class bro {
         this.cg.link(this.entity);
 
         this.eTime = 0;//前回弾を発射させてからの経過時間
-        this.eCoolTime = 1750;//弾発射のクールタイム
+        this.eCoolTime = 1500;//弾発射のクールタイム
         this.swTime = 0;//移動しながらの攻撃の経過時間
         this.swCoolTime = 250;
 
-        this.hp = 800;
-        this.maxHp = 800;
+        this.hp = 1000;
+        this.maxHp = 1000;
         this.pos = pos.copy();
         this.size = this.entity.shape.size.copy();
         this.speed = new Fortis.Vector2(Fortis.Game.canvasCfg.size.x / 15, 0);
@@ -393,7 +393,7 @@ class bro {
                 this.atacking = true;
                 let atRand = Math.floor(Math.random() * 4);
                 if (atRand != 0) {//たくさんのやつ
-                    for (let i = 0; i < 8; i++) {
+                    for (let i = 0; i < 12; i++) {
                         let speedy = Fortis.Game.canvasCfg.size.y / 20 * (Math.floor(Math.random() * 3) / 10 + 0.7);
                         let angle = Math.floor(Math.random() * 170) + 5;
                         if (Math.floor(Math.random() * 2) == 0) {
